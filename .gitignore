@@ -1,0 +1,11 @@
+# Exclude .gz and .gpkg files in Data and Output directories
+# also exclude all the huge churches datasets, these can be downloaded again
+# using the churches.ipynb if needed
+Data/*.gz
+Data/*.gz.properties
+Data/*.gpkg
+Data/fullobs*
+Data/dynobs*
+Output/*.gz
+Output/*.gpkg
+Output/*.tif
