@@ -154,6 +154,7 @@ For our analyses, we used this second simulation-based approach and estimated PD
 $$
 PDD(d,t,i)
 $$
+
 where $d$ represents distances (as in pariwise distances) with dimensionality corresponding to the KDE sampling grid, $t$ was the time dimension corresponding to the number of time slices, and $i$ was the Monte Carlo (MC) iteration index with dimensionality corresponding to the number of samples drawn to explore temporality and chronological uncertainty (the ensemble). We then plotted the PDD estimates using `ChronoCluster` heat map plots where the x-axis represented time, the y-axis represented pairwise distances, and the colour (heat) represented mean density across the ensemble (dimension $i$) for a given time slice.
 
 Next, we created two null hypothesis PDD arrays for each of the two cases. The first null model was the standard Complete Spatial Randomness (CSR) model---which is more accurately described as complete uniform spatial randomness. This null posits that the basis for identifying significant features in the PDD should be a set of points distributed randomly throughout a study area where every coordinate location has equal probability of sampled (i.e., uniformly distributed random scatter of points). We then created ensembles of probable points from the CSR model by sampling null model coordinates uniformly from within a minimum bounding area for each region and assigning those sampled coordinates to the original point data thereby maintaining the temporal information and producing simulated null model samples that reflected spatial variation in the CSR as well as temporal patterns and uncertainty in the empirical data. This led to CSR-based PDD ensembles that could be paired with the empirical PDD enemble for each region and time slice. Importantly, since we effectively just randomized the coordinates of the original data (in accordance with CSR) we simultanesouly ensured comparable sample sizes between the simulated numm hypothesis datasets and the empirical datasets. 
@@ -165,6 +166,7 @@ Next, we created PDD difference p-value arrays to identify and highlight the sta
 $$
 \Delta PDD(d,t,i) = PDD_{empirical}(d,t,i) - PDD_{null}(d,t,i)
 $$
+
 As a result, we obtained a distribution of differences for every element of $\Delta PDD(d, t, i)$. These distributions, as differences of random variables, could be expected to converge and be well approximated by a normal distribution. This meant, in turn, that we could calculate z-scores to estimate p-values for every $i$-slice of the array. These values indicated the statistical significance of differences between the empirical and null model PDDs for any given distance, $d$, and time slice, $t$. Statistically significant regions of the PDD surfaces (deviations of the empirical PDD from a null at at given time slice) indicated "characteristic scales" of spatial structure in the point data.
 
 ## Temporally-Weighted KDEs
@@ -187,11 +189,13 @@ For our analyses, we used a Gaussian kernel canonically defined as:
 $$
 K(u, v) = \frac{1}{2\pi} e^{-\frac{1}{2}(u^2 + v^2)}.
 $$
+
 To incorporate temporality and chronometric uncertainty, though, we weighted the estimate with the inclusion probabilities for each observation given the relevant time slice, which led to a KDE defined as follows:
 
 $$
 \hat{f}(x, y) = \frac{1}{\sum_{i=1}^n w_i \cdot h_x h_y} \sum_{i=1}^n w_i \cdot K\left(\frac{x - x_i}{h_x}, \frac{y - y_i}{h_y}\right)
 $$
+
 
 where all parameters are defined as before, but $w_i$ is the inclusion probability associated with the $i$-th observed point. By including the weights $w_i$, the KDE accounts for the varying contribution of each point based on its inclusion probability, allowing for a more accurate representation of the underlying spatial density at the given time that averages out both temporality and chronometric uncertainty. The normalization term $\sum_{i=1}^n w_i \cdot h_x h_y$ ensures the density estimate integrates to 1 across the 2D plane.
 
