@@ -115,6 +115,7 @@ $$
 \end{cases}
 \quad \text{with} \quad \int_{-\infty}^\infty \delta(t - \tau) \, dt = 1
 $$
+
 The survival function, $S_\omega(t)$, is then:
 
 $$
@@ -123,11 +124,13 @@ S_\omega(t) = \begin{cases}
 0, & t \geq \tau
 \end{cases}
 $$
+
 The probability that the event exists at time $t$ is still given by:
 
 $$
 p(t) = p_\alpha(t) \cdot S_\omega(t)
 $$
+
 Substituting for $S_\omega(t)$, we have:
 
 $$
@@ -136,6 +139,7 @@ p(t) = \Phi\left(\frac{t - \mu_\alpha}{\sigma_\alpha}\right) \cdot \begin{cases}
 0, & t \geq \tau
 \end{cases}
 $$
+
 Thus, the resulting density function reflects a truncated Gaussian distribution where the probability is nonzero only before the fixed end time $\tau$. 
 
 The `ChronoCluster` package can flexibly incorporate any such valid distribution for start/end times and even has purpose-built methods for radiocarbon date based densities. As a result, virtually any form of chronological uncertainty can be included in the calculation estimating the probability that a given point existed at any given time in the spacetime volume. It also accounts for change over time in the point pattern itself because, naturally, the probability that a point existed in a time slice that does not intersect with its world line is zero---the point has either not entered the spacetime volume by the given time or it left the volume prior to that time. In archaeological terms we mean that the point (e.g., Angkorian temple) represents an archaeological event/entity that either was not yet present or had already been abandoned. So, temporally transgressive changes in the point pattern (indicated by the inclusion of new points or dropping-out of older points) can be seamlessly integrated.
