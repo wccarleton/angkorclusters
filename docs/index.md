@@ -17,8 +17,6 @@ Carleton and Song. (2025). wccarleton/chronocluster: Initial Release (v0.1.0). Z
 ### Archive
 This repository has been archived with Zenodo for replication and review. It may be updated after peer review of the associated paper and any updates will be reflected by repo releases that will be automatically archived with versioning. The history can be tracked on Zenodo as well and this repo referenced as follows:
 
-
-
 ## Contact
 
 [ORCID](https://orcid.org/0000-0001-7463-8638) |
