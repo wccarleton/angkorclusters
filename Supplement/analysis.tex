@@ -119,11 +119,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\usepackage{authblk}
-\renewcommand\Authfont{\normalsize}
-\renewcommand\Affilfont{\itshape\small}
-\setlength{\affilsep}{0.5em}
-\pagestyle{plain}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
@@ -198,7 +193,7 @@ Planck Institute of Geoanthropology, Jena, Germany} ² \emph{Center for
 Collaborative Synthesis in Archaeology, University of Colorado, Boulder,
 Colorado, USA}\\
 ³ \emph{Department of Anthropology, Northern Illinois University,
-Dekalb, Illinois, USA}
+DeKalb, Illinois, USA}
 
 emails: carleton@gea.mpg.de, sarah.klassen@colorado.edu,
 jmurphy7@niu.edu, roberts@gea.mpg.de
@@ -365,6 +360,11 @@ array([ 800,  850,  900,  950, 1000, 1050, 1100, 1150])
 \paragraph{GPU Boosted Pairwise Distance Density
 KDEs}\label{gpu-boosted-pairwise-distance-density-kdes}
 
+To speed up the production of the heatmap surfaces considerably, you can
+use GPU processing via the CUML library. If, however, you do not have
+access to a dedicated, compatiible GPU, set `kde\_custom=cuml\_kde' to
+`kde\_custom=None' in all the subsequent cells where appropriate.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ cuml.neighbors }\ImportTok{import}\NormalTok{ KernelDensity}
@@ -417,6 +417,7 @@ Angkor}\label{figure-s2-heatmap-of-pairwise-distance-density-versus-time-at-angk
 \NormalTok{use\_kde }\OperatorTok{=} \VariableTok{True}
 \NormalTok{pair\_bw }\OperatorTok{=} \VariableTok{None}
 \NormalTok{kde\_sample\_n }\OperatorTok{=} \DecValTok{50}
+\CommentTok{\# here set kde\_custom=None to use a CPU instead of GPU for processing.}
 \NormalTok{kde\_custom}\OperatorTok{=}\NormalTok{cuml\_kde}
 
 \CommentTok{\# Produce pairwise distances to explore clustering structure}
@@ -743,7 +744,14 @@ Slices}\label{figure-s8-difference-between-angkor-pdd-and-bise-null-at-4-time-sl
 \includegraphics{analysis_files/figure-pdf/cell-17-output-1.png}
 
 \subsection{Hampshire County at
-Doomsday}\label{hampshire-county-at-doomsday}
+Domesday}\label{hampshire-county-at-domesday}
+
+This section processes the Domesday data for Hampshire. The data were
+originally taken from an online repository and processed with another
+notebook in this repo (doomsday.ipynb). The processed data were then
+saved to the repo to reduce redundant processing for use in this
+notebook, but for full replication, you would need to run the cells in
+the other notebook before proceeding further here.
 
 \subsubsection{Data Wrangling}\label{data-wrangling-1}
 

@@ -9,3 +9,7 @@ Data/dynobs*
 Output/*.gz
 Output/*.gpkg
 Output/*.tif
+Zettlr/
+Src/.quarto
+Src/analysis_files
+Src/analysis.tex
