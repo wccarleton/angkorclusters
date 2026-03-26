@@ -6,6 +6,7 @@ Data/*.gz.properties
 Data/*.gpkg
 Data/fullobs*
 Data/dynobs*
+Data/Laslett_table.csv
 Output/*.gz
 Output/*.gpkg
 Output/*.tif
