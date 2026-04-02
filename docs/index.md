@@ -2,7 +2,7 @@
 ## Overview
 This repo contains the data and code used for the study presented in the following paper:
 
-[*Disrupting the dichotomy between compact and low-density urbanism in the archaeological record*]()
+[*Comparative spatial analysis reveals important structural similarities between ancient Angkor and Late Anglo-Saxon Hampshire*]()
 
 ## Abstract
 
