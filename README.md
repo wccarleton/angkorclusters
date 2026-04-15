@@ -101,7 +101,7 @@ pdflatex --version
 ### Archive
 This repository has been archived with Zenodo for replication and review. It may be updated after peer review of the associated paper and any updates will be reflected by repo releases that will be automatically archived with versioning. The history can be tracked on Zenodo as well and this repo referenced as follows:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15371728.svg)](https://doi.org/10.5281/zenodo.15371728)
+[![](https://zenodo.org/badge/doi/10.5281/zenodo.15371728.svg)](https://doi.org/10.5281/zenodo.15371728)
 
 ## Contact
 [ORCID](https://orcid.org/0000-0001-7463-8638) |
