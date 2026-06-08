@@ -2,10 +2,10 @@
 ## Overview
 This repo contains the data and code used for the study presented in the following paper:
 
-[*Comparative spatial analysis reveals important structural similarities between ancient Angkor and Late Anglo-Saxon Hampshire*]()
+[*Comparative spatial analysis reveals important structural similarities between ancient Angkor and Late Anglo-Saxon Hampshire*](https://doi.org/10.1007/s10816-026-09798-w)
 
 ## Abstract
-Angkor (800-1450 CE) is considered the type-site for “low-density agrarian urbanism”, a loosely defined archaeological label used to describe settlements with urban traits but dispersed spatial structure. Angkor’s abandonment from the 15th century has fueled concerns that low-density cities, now common globally, may be inherently unstable. The spatial distinctiveness of Angkor relative to other pre-modern rural-urban systems, however, has never been quantitatively tested. Using ChronoCluster, a Python package for novel spatiotemporal archaeological analysis, we compared Angkor’s spatial structure to that of Anglo-Saxon Hampshire as recorded in the Domesday survey (mid-11th century CE), a rural-urban system not described as low-density agrarian urbanism. Surprisingly, both cases showed similar multiscale spatial clustering. Despite their different appearances, they may reflect scaled variants of the same underlying urban-rural dynamics. This targeted comparison between the “low-density” type-site and a non-low-density comparator challenges the idea that low-density cities like Angkor form a distinct type, raises questions about what drives variation in urban form across time and space, and opens new questions about the impact of spatial structure on urban sustainability.
+Angkor (800-1435 CE) is considered the type-site for “low-density agrarian urbanism”, a loosely defined archaeological label used to describe settlements with urban traits but dispersed spatial structure. Angkor’s abandonment from the 15th century has fueled concerns that low-density cities, now common globally, may be inherently unstable. The spatial distinctiveness of Angkor relative to other pre-modern rural-urban systems, however, has never been quantitatively tested. Using ChronoCluster, a Python package for novel spatiotemporal archaeological analysis, we compared Angkor’s spatial structure to that of Anglo-Saxon Hampshire as recorded in the Domesday survey (mid-11th century CE), a rural-urban system not described as low-density agrarian urbanism. Surprisingly, both cases showed similar multiscale spatial clustering. Despite their different appearances, they may reflect scaled variants of the same underlying urban-rural dynamics. This targeted comparison between the “low-density” type-site and a non-low-density comparator challenges the idea that low-density cities like Angkor form a distinct type, raises questions about what drives variation in urban form across time and space, and opens new questions about the impact of spatial structure on urban sustainability.
 
 ## Software
 The scripts and notebooks contained in this repository are intended for replication efforts and to improve the transparency of research. They are, of course, provided without warranty or technical support. That said, questions about the code can be directed to me, Chris Carleton, at ccarleton@protonmail.com.
@@ -56,7 +56,7 @@ quarto render analysis.ipynb
 
 This will:
 
-- execute the notebook (unless `--execute=false` is specified)
+- execute the notebook (unless `--no-execute` is specified)
 - generate a PDF of the Supplementary Information
 - (optionally) produce intermediate LaTeX files if `keep-tex: true` is set
 
@@ -74,7 +74,7 @@ By default, output files (e.g., `.pdf`, `.tex`, figures) are written either:
 If the notebook has already been executed and you only want to regenerate the PDF:
 
 ```bash
-quarto render analysis.ipynb --execute=false
+quarto render analysis.ipynb --no-execute
 ```
 
 ---
